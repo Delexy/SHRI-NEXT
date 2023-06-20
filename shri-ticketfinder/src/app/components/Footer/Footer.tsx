@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import style from './style.module.scss';
 
-export default function Footer() {
+const Footer = () => {
   return (
 		<footer className={style.footer}>
 			<nav className={`row align-center justify-between ${style['footer__nav']}`}>
@@ -11,3 +11,5 @@ export default function Footer() {
 		</footer>
 	);
 }
+
+export default Footer;

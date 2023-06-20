@@ -9,6 +9,10 @@
 	&__logo {
 		font-size: 3.2rem;
 		font-weight: 700;
+		transition: color .3s ease-out;
+		&:hover {
+			color: var(--color-light);
+		}
 	}
 
 	&__cart {

@@ -1,0 +1,26 @@
+.input {
+  &__title {
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: .4rem;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--color-default);
+    border-radius: var(--border-radius);
+    padding: 10px 16px;
+    background-color: unset;
+    transition: border-color .3s ease-out;
+
+    &::placeholder {
+      color: var(--color-tetriary);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--color-light);
+    }
+  }
+}

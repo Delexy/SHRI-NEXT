@@ -2,6 +2,7 @@
 
 // CSS Vars
 :root {
+  // Colors
   --color-bg: #F5F5F5;
   --color-dark: #333333;
   --color-primary: #1B1F23;
@@ -9,6 +10,10 @@
   --color-white: #FFFFFF;
   --color-light: #FF5500;
   --color-light-disabled: #FFA375;
+  --color-default: #E1E3E6;
+
+  // Defaults
+  --border-radius: 8px;
 }
 
 *,
@@ -25,7 +30,7 @@ html {
 
 body {
   margin: 0;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   font-size: 1.6rem;
   font-weight: 400;
   background-color: var(--color-bg);
@@ -56,6 +61,10 @@ input {
 a {
   text-decoration: none;
   color: currentColor;
+  transition: color .3s ease-out;
+  &:not([class]):hover {
+    color: var(--color-light);
+  }
 }
 
 ul,
@@ -66,6 +75,7 @@ ol {
 
 button {
   padding: 0;
+  border: none;
   color: inherit;
   font-weight: 400;
   appearance: none;

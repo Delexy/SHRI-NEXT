@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import style from './style.module.scss';
 
-export default function Footer() {
+const Footer = () => {
   return (
 		<header className={`row justify-between align-center ${style.header}`}>
 			<Link href='/' className={style['header__logo']}>Билетопоиск</Link>
@@ -9,3 +9,5 @@ export default function Footer() {
 		</header>
 	);
 }
+
+export default Footer;
