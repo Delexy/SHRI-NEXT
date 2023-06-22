@@ -24,7 +24,7 @@ const Counter: FC<TCounter> = ({ classNames, initialValue, incrementCallback, de
     <div className={`${style['counter']}`}>
       <button className={`${style['counter__minus']} ${style['counter__btn']}`}></button>
       <span className={style['counter__value']}>0</span>
-      <button className={`${style['counter__minus']} ${style['counter__btn']}`}></button>
+      <button className={`${style['counter__plus']} ${style['counter__btn']}`}></button>
     </div>
   );
 };

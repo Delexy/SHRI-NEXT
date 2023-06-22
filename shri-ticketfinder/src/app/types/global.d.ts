@@ -1,10 +1,12 @@
+import { genres } from '@/enums/genres'
+
 export type TFilm = {
   id: string,
   title: string,
   posterUrl?: string,
   releaseYear?: string,
   description?: string,
-  genre?: string,
+  genre: keyof typeof genres,
   rating: number,
   director: string,
   reviewIds?: TReview[],

@@ -3,7 +3,7 @@ import Footer from "./components/Footer/Footer";
 import "./globals.scss";
 import { Roboto } from "next/font/google";
 
-const roboto = Roboto({ subsets: ["latin"], weight: ['400'] });
+const roboto = Roboto({ subsets: ["cyrillic"], weight: ['400'] });
 
 export const metadata = {
   title: "Билетопоиск",
@@ -19,6 +19,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
       <Footer></Footer>
+      <div id="modals-contianer"></div>
+      <div id="dropdowns-container"></div>
       </body>
     </html>
   );

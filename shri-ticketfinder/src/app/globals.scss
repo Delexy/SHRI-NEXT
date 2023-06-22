@@ -158,3 +158,13 @@ h1, .h1 {
 .no-margin {
   margin: unset;
 }
+
+#modals-contianer {
+  position: absolute;
+  z-index: 200;
+}
+
+#dropdowns-container {
+  position: absolute;
+  z-index: 100;
+}

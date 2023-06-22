@@ -1,0 +1,65 @@
+.select {
+  &__title {
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+  }
+
+  &__input {
+    position: relative;
+    cursor: pointer;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 17px;
+      display: block;
+      width: 24px;
+      height: 24px;
+      background-image: url(../../imgs/icons/arrow.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      opacity: 0.5;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__opened {
+    &::after {
+      transform: translateY(-50%) scale(1, -1);
+    }
+
+    p {
+      border-color: var(--color-light);
+      color: var(--color-black);
+    }
+  }
+
+  &__dropdown {
+    position: fixed;
+    background-color: var(--color-white);
+    padding: 8px;
+  }
+
+  &__item {
+    padding: 12px;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-light);
+    }
+  }
+
+  &__visual {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--color-default);
+    border-radius: var(--border-radius);
+    color: var(--color-tetriary);
+    padding: 10px 16px;
+    background-color: unset;
+    margin-bottom: 0;
+    transition: border-color 0.3s ease-out;
+  }
+}
