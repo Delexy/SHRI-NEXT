@@ -1,0 +1,48 @@
+.film {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 32px;
+  position: relative;
+  padding: 24px;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  margin-bottom: 16px;
+  &__image {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+    object-position: center;
+  }
+  &__title {
+    font-size: 3.2rem;
+    margin-top: 0;
+    margin-bottom: 2.4rem;
+  }
+  &__props {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 16px;
+    font-size: 2rem;
+    margin-bottom: 3.2rem;
+  }
+  &__prop {
+    span:first-of-type {
+      display: inline-block;
+      font-weight: 600;
+      margin-right: .8rem;
+    }
+  }
+  &__desc {
+    p {
+      line-height: 24px;
+    }
+    p:first-of-type {
+      font-weight: bold;
+    }
+  }
+  &__counter {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+  }
+}

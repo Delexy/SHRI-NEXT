@@ -1,16 +1,16 @@
-@import "../../node_modules/normalize.css/normalize";
+@import '../../node_modules/normalize.css/normalize';
 
 // CSS Vars
 :root {
   // Colors
-  --color-bg: #F5F5F5;
+  --color-bg: #f5f5f5;
   --color-dark: #333333;
-  --color-primary: #1B1F23;
-  --color-tetriary: #999FA6;
-  --color-white: #FFFFFF;
-  --color-light: #FF5500;
-  --color-light-disabled: #FFA375;
-  --color-default: #E1E3E6;
+  --color-primary: #1b1f23;
+  --color-tetriary: #999fa6;
+  --color-white: #ffffff;
+  --color-light: #ff5500;
+  --color-light-disabled: #ffa375;
+  --color-default: #e1e3e6;
 
   // Defaults
   --border-radius: 8px;
@@ -48,7 +48,7 @@ input {
   border-radius: 0;
   color: inherit;
 
-  &[type="number"] {
+  &[type='number'] {
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
       /* display: none; <- Crashes Chrome on hover */
@@ -61,7 +61,7 @@ input {
 a {
   text-decoration: none;
   color: currentColor;
-  transition: color .3s ease-out;
+  transition: color 0.3s ease-out;
   &:not([class]):hover {
     color: var(--color-light);
   }
@@ -90,13 +90,14 @@ button {
 
 .default-grid {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 1fr min-content;
   margin-top: var(--header-height);
   min-height: 100vh;
-  overflow-x: hidden;
+  padding-top: 100px;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   font-size: 3.2rem;
   margin-bottom: 1.6rem;
 }
@@ -167,4 +168,34 @@ h1, .h1 {
 #dropdowns-container {
   position: absolute;
   z-index: 100;
+}
+
+.btn {
+  padding: 10px 16px;
+  background-color: unset;
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  transition: background-color 0.3s ease-out, color 0.3s ease-out;
+
+  &_primary {
+    color: var(--color-white);
+    background-color: var(--color-light);
+
+    &:hover {
+      background-color: transparent;
+      color: var(--color-light);
+      border-color: var(--color-light)
+    }
+  }
+
+  &_secondary {
+    color: var(--color-light);
+    border: 1px solid var(--color-light);
+
+    &:hover {
+      background-color: var(--color-light-disabled);
+      color: var(--color-white);
+    }
+  }
 }

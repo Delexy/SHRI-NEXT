@@ -1,0 +1,36 @@
+.review {
+  background-color: var(--color-white);
+  margin-bottom: 16px;
+
+  &__img {
+    object-fit: scale-down;
+    background-color: #E0E0E0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
+
+  &__info {
+    font-size: 2rem;
+    flex-grow: 1;
+    margin-left: 3.2rem;
+  }
+
+  &__name {
+    font-weight: bold;
+    margin: 0;
+  }
+
+  &__rating {
+    margin: 0;
+
+    span {
+      display: inline-block;
+      font-weight: bold;
+      margin-left: .4rem;
+    }
+  }
+
+  &__desc {
+    font-size: 1.6rem;
+  }
+}

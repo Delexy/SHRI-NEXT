@@ -1,0 +1,35 @@
+.accordion {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 16px;
+  &_el {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+  }
+  &__info {
+    align-items: center;
+    cursor: pointer;
+    &_opened {
+      .accordion__btn {
+        transform: scale(1, -1);
+      }
+    }
+  }
+  &__title {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  &__btn {
+    width: 32px;
+    height: 32px;
+		background-image: url('/imgs/icons/arrow.svg');
+    background-color: unset;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+  }
+  &__text {
+    margin-top: 16px;
+  }
+}
