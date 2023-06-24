@@ -1,10 +1,12 @@
 import { configureStore, combineReducers, applyMiddleware } from '@reduxjs/toolkit';
 import { cartReducer } from './features/cart';
 import { movieApi } from './services/movieApi';
+import { filterReducer } from './features/filter';
 
 const reducer = combineReducers({
   cart: cartReducer,
   [movieApi.reducerPath]: movieApi.reducer,
+  filter: filterReducer,
 });
 
 export const createStore = () => {

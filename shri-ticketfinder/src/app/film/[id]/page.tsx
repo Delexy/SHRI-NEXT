@@ -57,7 +57,7 @@ const Film: FC<TFilmProps> = ({ params }) => {
           <Counter filmId={data.id}></Counter>
         </div>
       </div>
-      {/* <Reviews reviews={reviews}></Reviews> */}
+      <Reviews filmId={data.id}></Reviews>
     </>
   );
 };

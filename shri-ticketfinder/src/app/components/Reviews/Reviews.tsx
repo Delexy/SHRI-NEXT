@@ -1,23 +1,23 @@
 import { FC } from 'react';
 import style from './style.module.scss';
 import Image from 'next/image';
-
-type TReview = {
-  id: string;
-  image: string;
-  name: string;
-  text: string;
-  rating: number;
-};
+import { useGetMovieReviewsQuery } from '@/app/redux/services/movieApi';
+import { TReview } from '@/app/types/global';
 
 type TReviewsProps = {
-  reviews: TReview[];
+  filmId: string;
 };
 
-const Reviews: FC<TReviewsProps> = ({ reviews = [] }) => {
+const Reviews: FC<TReviewsProps> = ({ filmId }) => {
+  const {data, isLoading} = useGetMovieReviewsQuery(filmId);
+
+  if(isLoading) {
+    return <div>Подгружаем отзывы</div>
+  }
+
   return (
     <div>
-      {reviews.map((review) => (
+      {data.map((review: TReview) => (
         <div key={review.id} className={`row content-wrapper ${style['review']}`}>
           <Image className={style['review__img']} src={review.image || '/imgs/photo.svg'} width={100} height={100} alt={review.name} />
           <div className={style['review__info']}>

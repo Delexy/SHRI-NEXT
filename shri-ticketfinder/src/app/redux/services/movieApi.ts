@@ -6,7 +6,9 @@ export const movieApi = createApi({
   endpoints: (builder) => ({
     getMovies: builder.query({ query: () => 'movies' }),
     getMovie: builder.query({ query: (movieId) => `movie?movieId=${movieId}` }),
+    getMovieReviews: builder.query({ query: (movieId) => `reviews?movieId=${movieId}` }),
+    getCinemas: builder.query({ query: () => `cinemas` }),
   }),
 });
 
-export const { useGetMoviesQuery, useGetMovieQuery } = movieApi;
+export const { useGetMoviesQuery, useGetMovieQuery, useGetMovieReviewsQuery, useGetCinemasQuery } = movieApi;

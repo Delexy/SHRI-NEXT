@@ -10,7 +10,7 @@ const SFPro = localFont({ src: '../../fonts/SFProText-Regular.ttf', weight: '400
 type TSelect = {
   label: string;
   initialValue?: TValue;
-  onChange?: () => {};
+  onChange?: (value: string | undefined) => void;
   placeholder?: string;
   values: TValue[];
 };
@@ -20,7 +20,7 @@ export type TValue = {
   text: string;
 };
 
-const Select: FC<TSelect> = ({ label, initialValue, values = [], onChange = () => {}, placeholder }) => {
+const Select: FC<TSelect> = ({ label, initialValue, values = [], onChange = (value: string | undefined) => {}, placeholder }) => {
   const [value, setValue] = useState(initialValue);
   const [dropdownIsVisible, setDropdownVisible] = useState(false);
   const [coords, setCoords] = useState<CSSProperties | undefined>(undefined);
@@ -59,7 +59,6 @@ const Select: FC<TSelect> = ({ label, initialValue, values = [], onChange = () =
 
   return (
     <label className={`${style['select']} ${SFPro.className}`}>
-      <input type='hidden' value={value?.value} />
       <span className={style['select__title']}>{label}</span>
       <div
         className={`${style['select__input']} ${dropdownIsVisible ? style['select__opened'] : ''}`}
@@ -71,6 +70,16 @@ const Select: FC<TSelect> = ({ label, initialValue, values = [], onChange = () =
       {dropdownIsVisible &&
         createPortal(
           <div className={style['select__dropdown']} style={getCoords()}>
+            <div
+                className={style['select__item']}
+                onClick={() => {
+                  setValue(undefined);
+                  setDropdownVisible(false);
+                  onChange(undefined);
+                }}
+              >
+                Не выбрано
+              </div>
             {values.map((item) => (
               <div
                 className={style['select__item']}
@@ -78,6 +87,7 @@ const Select: FC<TSelect> = ({ label, initialValue, values = [], onChange = () =
                 onClick={() => {
                   setValue(item);
                   setDropdownVisible(false);
+                  onChange(item.value);
                 }}
               >
                 {item.text}
