@@ -10,12 +10,12 @@ import style from './style.module.scss';
 import { TCinema, TFilm } from './types/global';
 
 const Home = () => {
-  const { data, isLoading } = useGetMoviesQuery(undefined);
+  const { data, isLoading, error } = useGetMoviesQuery(undefined);
   const { byCinema, byName, byGenre } = useAppSelector(selectFilterModule);
   const { data: cinemas, isLoading: isLoadingCinemas } = useGetCinemasQuery([]);
   let filteredMovies: TFilm[] = [];
 
-  if (!isLoading) {
+  if (!isLoading && !error) {
     filteredMovies = data.slice();
 
     if (data && (byCinema || byName || byGenre)) {
