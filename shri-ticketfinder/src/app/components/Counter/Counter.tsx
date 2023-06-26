@@ -16,9 +16,9 @@ const Counter: FC<TCounter> = ({ filmId }) => {
 
   return (
     <div className={`${style['counter']}`}>
-      <button className={`${style['counter__minus']} ${style['counter__btn']}`} onClick = {() => dispatch(cartAction.decrement(filmId))}></button>
+      <button className={`${style['counter__minus']} ${style['counter__btn']}`} onClick = {() => dispatch(cartAction.decrement(filmId))} disabled={initialValue == 0}></button>
       <span className={style['counter__value']}>{initialValue}</span>
-      <button className={`${style['counter__plus']} ${style['counter__btn']}`} onClick = {() => dispatch(cartAction.increment(filmId))}></button>
+      <button className={`${style['counter__plus']} ${style['counter__btn']}`} onClick = {() => dispatch(cartAction.increment(filmId))} disabled={initialValue == 30}></button>
     </div>
   );
 };

@@ -13,7 +13,7 @@ export const cartSlice = createSlice({
       const id = action.payload;
       const count = state[id] || 0;
 
-      state[id] = count + 1 >= maxTickets ? count : count + 1;
+      state[id] = count + 1 > maxTickets ? count : count + 1;
     },
     decrement: (state, action: PayloadAction<string>) => {
       const id = action.payload;
